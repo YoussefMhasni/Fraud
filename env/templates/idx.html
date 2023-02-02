@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function updateTable() {
+            $.getJSON('/df', function(data) {
+                var $table = $('<table>');
+                var $thead = $('<thead>');
+                var $tbody = $('<tbody>');
+                var $th1 = $('<th>');
+                var $th2 = $('<th>'); 
+                var $th3 = $('<th>');
+                var $th4 = $('<th>'); 
+                var $th5 = $('<th>');  
+                var $tr = $('<tr>');
+                var $td = $('<td>');
+                $th1.append("Transaction ID");
+                $th1.addClass("border-right");                    
+                $th2.append("Amount");
+                $th2.addClass("border-right");
+                $th3.append("Date");
+                $th3.addClass("border-right");
+                $th4.append("Device Type");
+                $th4.addClass("border-right");
+                $th5.append("Fraud Statue");
+                $th5.addClass("border-right");
+                $thead.append($tr.append($th1));
+                $thead.append($tr.append($th2));
+                $thead.append($tr.append($th3));
+                $thead.append($tr.append($th4));
+                $thead.append($tr.append($th5));
+                $table.append($thead);
+				
+				// Loop through the data
+                for (var i = 0; i < 1; i++) {
+                    var $tr = $('<tr>');
+                    var $td1 = $('<td>');
+                    var $td2 = $('<td>');
+                    var $td3 = $('<td>');
+                    var $td4 = $('<td>');
+                    var $td5 = $('<td>');
+                    var $td6 = $('<td>');
+                    $td1.append(data['Transaction ID']);
+                    $td2.append(data['Amount']);
+                    $td3.append(data['Date']);
+                    $td4.append(data['Device Type']);
+                    $td5.append(data['fraud_status']);
+                    $td1.addClass("border-left");
+                    $td2.addClass("border-left");
+                    $td3.addClass("border-right");
+                    $td4.addClass("border-right");
+                    $td5.addClass("border-right");
+                    $tr.append($td1);
+                    $tr.append($td2);
+                    $tr.append($td3);
+                    $tr.append($td4);
+                    $tr.append($td5);
+                    if (data['fraud_status'] == '1') {
+                        $tr.css('background-color', "#FF0000");
+                    }
+                    if (data['fraud_status'] == '0') {
+                        $tr.css('background-color', 'yellowgreen');
+                    }
+                    $tbody.append($tr);
+                }
+                $table.append($tbody);
+                $("#non-fraud-table").prepend($table);
+            });
+}
+        setInterval(updateTable, 500);
+    </script>
+    <style>
+        table {
+            width: 100%;
+            margin: 0px 0;
+
+        }
+        
+        th, td {
+            border: 0px rgb(0, 0, 0);
+            padding: 8px;
+            text-align: center;
+            width: 200px
+        }
+        
+        th {
+            background-color: #ededed;
+            color: #000000;
+            font-weight: bold;
+        }
+        
+        td {
+            color: 'black';
+        }
+     
+        .table-container {
+            overflow-x: unset;
+        }
+        td {
+            border: 0px solid rgb(27, 8, 8);
+            border-left: none;
+            border-right: none;
+            padding: 8px;
+            text-align: center;
+        }
+
+        td:first-child {
+            border-left: 0px solid #ddd;
+        }
+
+        td:last-child {
+            border-right: 0px solid #ddd;
+        }
+        </style>
+</head>
+<body>
+    <div id="fraud-table"></div>
+        <div>
+            <h2>
+                <p><center>Dashboard for Fraud Detection of Transactions</center></p>
+            </h2>
+        </div>
+    <div id="non-fraud-table"></div>
+    <h2>
+    </h2>
+</body>
+</html>

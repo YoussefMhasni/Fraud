@@ -1,0 +1,948 @@
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '138518428012776225111673950602'), ('oauth_timestamp', '1673950602'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=138518428012776225111673950602&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950602&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D138518428012776225111673950602%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950602%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: c0mSBymeaw4mH7tb2YspgPO9jqQ=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="138518428012776225111673950602", oauth_timestamp="1673950602", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="c0mSBymeaw4mH7tb2YspgPO9jqQ%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:kafka.client:Initiating connection to node bootstrap-0 at localhost:9092
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent-received
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name request-latency
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.latency
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv6 ('::1', 9092, 0, 0)]>: setting socket option (6, 1, 1)
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: established TCP connection
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+DEBUG:kafka.client:Node bootstrap-0 connected
+DEBUG:kafka.client:Sending metadata request MetadataRequest_v1(topics=NULL) to node bootstrap-0
+DEBUG:kafka.protocol.parser:Sending request MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Request 1: MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.protocol.parser:Received correlation id: 1
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 1 (54.73065376281738 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 7, groups: 0)
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '146228020458540005161673950608'), ('oauth_timestamp', '1673950608'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=146228020458540005161673950608&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950608&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D146228020458540005161673950608%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950608%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: SPelTerQmx6iZKTucLPNtFI8jNo=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395059952207011; guest_id_ads=v1%3A167395059952207011; guest_id_marketing=v1%3A167395059952207011; personalization_id="v1_1bptEA/reIrM0Syb988pXA=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="146228020458540005161673950608", oauth_timestamp="1673950608", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="SPelTerQmx6iZKTucLPNtFI8jNo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: Socket EVENT_READ without in-flight-requests
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '163419075537812952981673950618'), ('oauth_timestamp', '1673950618'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=163419075537812952981673950618&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950618&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D163419075537812952981673950618%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950618%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: J0jGqDfV0FdBVGAnL/pdBUpLhAU=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395059952207011; guest_id_ads=v1%3A167395059952207011; guest_id_marketing=v1%3A167395059952207011; personalization_id="v1_1bptEA/reIrM0Syb988pXA=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="163419075537812952981673950618", oauth_timestamp="1673950618", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="J0jGqDfV0FdBVGAnL%2FpdBUpLhAU%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '112349999401249637231673950638'), ('oauth_timestamp', '1673950638'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=112349999401249637231673950638&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950638&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D112349999401249637231673950638%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950638%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 0FHLQYxybOswdlZ+lgQpB+BmpWQ=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395059952207011; guest_id_ads=v1%3A167395059952207011; guest_id_marketing=v1%3A167395059952207011; personalization_id="v1_1bptEA/reIrM0Syb988pXA=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="112349999401249637231673950638", oauth_timestamp="1673950638", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="0FHLQYxybOswdlZ%2BlgQpB%2BBmpWQ%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '158599577834892980021673950678'), ('oauth_timestamp', '1673950678'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=158599577834892980021673950678&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950678&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D158599577834892980021673950678%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950678%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: soCwAVPXxfwc2ZJQ/bliMQjrTNY=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395059952207011; guest_id_ads=v1%3A167395059952207011; guest_id_marketing=v1%3A167395059952207011; personalization_id="v1_1bptEA/reIrM0Syb988pXA=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="158599577834892980021673950678", oauth_timestamp="1673950678", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="soCwAVPXxfwc2ZJQ%2FbliMQjrTNY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '179499982984117749511673950696'), ('oauth_timestamp', '1673950696'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=179499982984117749511673950696&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950696&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D179499982984117749511673950696%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950696%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: X/xjRrXrsllxexD/0foXPWHHznc=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="179499982984117749511673950696", oauth_timestamp="1673950696", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="X%2FxjRrXrsllxexD%2F0foXPWHHznc%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:kafka.client:Initiating connection to node bootstrap-0 at localhost:9092
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent-received
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name request-latency
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.latency
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv6 ('::1', 9092, 0, 0)]>: setting socket option (6, 1, 1)
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: established TCP connection
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+DEBUG:kafka.client:Node bootstrap-0 connected
+DEBUG:kafka.client:Sending metadata request MetadataRequest_v1(topics=NULL) to node bootstrap-0
+DEBUG:kafka.protocol.parser:Sending request MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Request 1: MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.protocol.parser:Received correlation id: 1
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 1 (7.957220077514648 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '10465375267671532251673950702'), ('oauth_timestamp', '1673950702'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=10465375267671532251673950702&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950702&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D10465375267671532251673950702%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950702%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: CT5xTYir9GSsDtZ9fLJfqEdw2Os=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395069341477750; guest_id_ads=v1%3A167395069341477750; guest_id_marketing=v1%3A167395069341477750; personalization_id="v1_9/f4WZ9R3hIwf22rXxQdgg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="10465375267671532251673950702", oauth_timestamp="1673950702", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="CT5xTYir9GSsDtZ9fLJfqEdw2Os%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '68471000650194159921673950712'), ('oauth_timestamp', '1673950712'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=68471000650194159921673950712&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950712&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D68471000650194159921673950712%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950712%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: XgpdPONxni3U49fHGsbFpjNtCKU=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395069341477750; guest_id_ads=v1%3A167395069341477750; guest_id_marketing=v1%3A167395069341477750; personalization_id="v1_9/f4WZ9R3hIwf22rXxQdgg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="68471000650194159921673950712", oauth_timestamp="1673950712", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="XgpdPONxni3U49fHGsbFpjNtCKU%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '118879558859806314721673950732'), ('oauth_timestamp', '1673950732'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=118879558859806314721673950732&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950732&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D118879558859806314721673950732%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950732%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: wcuW27qBm8kquFlWYWJfucICEA4=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395069341477750; guest_id_ads=v1%3A167395069341477750; guest_id_marketing=v1%3A167395069341477750; personalization_id="v1_9/f4WZ9R3hIwf22rXxQdgg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="118879558859806314721673950732", oauth_timestamp="1673950732", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="wcuW27qBm8kquFlWYWJfucICEA4%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '182431479252595249811673950772'), ('oauth_timestamp', '1673950772'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=182431479252595249811673950772&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950772&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D182431479252595249811673950772%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950772%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: ikdCD3zPL7toS4KoxZoeLptNjOA=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395069341477750; guest_id_ads=v1%3A167395069341477750; guest_id_marketing=v1%3A167395069341477750; personalization_id="v1_9/f4WZ9R3hIwf22rXxQdgg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="182431479252595249811673950772", oauth_timestamp="1673950772", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="ikdCD3zPL7toS4KoxZoeLptNjOA%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '178659579687072627591673950831'), ('oauth_timestamp', '1673950831'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=178659579687072627591673950831&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950831&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D178659579687072627591673950831%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950831%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 1iEGO3Jb0eyRhr7rTixAqiW3wio=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="178659579687072627591673950831", oauth_timestamp="1673950831", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="1iEGO3Jb0eyRhr7rTixAqiW3wio%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:kafka.client:Initiating connection to node bootstrap-0 at localhost:9092
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent-received
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name request-latency
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.latency
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv6 ('::1', 9092, 0, 0)]>: setting socket option (6, 1, 1)
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: established TCP connection
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+DEBUG:kafka.client:Node bootstrap-0 connected
+DEBUG:kafka.client:Sending metadata request MetadataRequest_v1(topics=NULL) to node bootstrap-0
+DEBUG:kafka.protocol.parser:Sending request MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Request 1: MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.protocol.parser:Received correlation id: 1
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 1 (8.60142707824707 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '82882044859403270641673950836'), ('oauth_timestamp', '1673950836'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=82882044859403270641673950836&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950836&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D82882044859403270641673950836%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950836%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 216EAqjeIJfkIxbPtL/ucBpjspc=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395082794513337; guest_id_ads=v1%3A167395082794513337; guest_id_marketing=v1%3A167395082794513337; personalization_id="v1_/VjMRKi0zAursZjAtLU65A=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="82882044859403270641673950836", oauth_timestamp="1673950836", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="216EAqjeIJfkIxbPtL%2FucBpjspc%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '15940905507975473261673950846'), ('oauth_timestamp', '1673950846'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=15940905507975473261673950846&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950846&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D15940905507975473261673950846%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950846%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: u8x9GvHt6O6Ooe+IV77cpzVgTqI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395082794513337; guest_id_ads=v1%3A167395082794513337; guest_id_marketing=v1%3A167395082794513337; personalization_id="v1_/VjMRKi0zAursZjAtLU65A=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="15940905507975473261673950846", oauth_timestamp="1673950846", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="u8x9GvHt6O6Ooe%2BIV77cpzVgTqI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '58445550611420405621673950867'), ('oauth_timestamp', '1673950867'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=58445550611420405621673950867&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950867&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D58445550611420405621673950867%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950867%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 1yfncx08hFs/TkWrRK0It5vF7G8=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395082794513337; guest_id_ads=v1%3A167395082794513337; guest_id_marketing=v1%3A167395082794513337; personalization_id="v1_/VjMRKi0zAursZjAtLU65A=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="58445550611420405621673950867", oauth_timestamp="1673950867", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="1yfncx08hFs%2FTkWrRK0It5vF7G8%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '129774014491692065021673950920'), ('oauth_timestamp', '1673950920'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=129774014491692065021673950920&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950920&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D129774014491692065021673950920%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950920%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: zcccPiYJrfoowRhoA5Q/4hrFX9U=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="129774014491692065021673950920", oauth_timestamp="1673950920", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="zcccPiYJrfoowRhoA5Q%2F4hrFX9U%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:kafka.client:Initiating connection to node bootstrap-0 at localhost:9092
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent-received
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name request-latency
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.latency
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv6 ('::1', 9092, 0, 0)]>: setting socket option (6, 1, 1)
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: established TCP connection
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+DEBUG:kafka.client:Node bootstrap-0 connected
+DEBUG:kafka.client:Sending metadata request MetadataRequest_v1(topics=NULL) to node bootstrap-0
+DEBUG:kafka.protocol.parser:Sending request MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Request 1: MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.protocol.parser:Received correlation id: 1
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 1 (9.009838104248047 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '15832049602440723091673950925'), ('oauth_timestamp', '1673950925'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=15832049602440723091673950925&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950925&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D15832049602440723091673950925%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950925%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: TTV7qg5z7UfFNIm8QZ2W4o8HZj8=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395091680927264; guest_id_ads=v1%3A167395091680927264; guest_id_marketing=v1%3A167395091680927264; personalization_id="v1_mnpaYNz2x3OGNiJwCKEMIQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="15832049602440723091673950925", oauth_timestamp="1673950925", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="TTV7qg5z7UfFNIm8QZ2W4o8HZj8%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '16758966014451402091673950935'), ('oauth_timestamp', '1673950935'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=16758966014451402091673950935&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950935&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D16758966014451402091673950935%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950935%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: n5i/KY4FFWU93YX0SlQ5R2tAtHM=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395091680927264; guest_id_ads=v1%3A167395091680927264; guest_id_marketing=v1%3A167395091680927264; personalization_id="v1_mnpaYNz2x3OGNiJwCKEMIQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="16758966014451402091673950935", oauth_timestamp="1673950935", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="n5i%2FKY4FFWU93YX0SlQ5R2tAtHM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '9647259669940696831673950956'), ('oauth_timestamp', '1673950956'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=9647259669940696831673950956&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950956&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D9647259669940696831673950956%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950956%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: XlSHiQ/iWAVcY/WxH/Y5Y/bEPcE=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395091680927264; guest_id_ads=v1%3A167395091680927264; guest_id_marketing=v1%3A167395091680927264; personalization_id="v1_mnpaYNz2x3OGNiJwCKEMIQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="9647259669940696831673950956", oauth_timestamp="1673950956", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="XlSHiQ%2FiWAVcY%2FWxH%2FY5Y%2FbEPcE%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '62558241175714960211673950974'), ('oauth_timestamp', '1673950974'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=62558241175714960211673950974&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950974&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D62558241175714960211673950974%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950974%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: EcQ250sGQlWCDCROZTF/o40tzFI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="62558241175714960211673950974", oauth_timestamp="1673950974", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="EcQ250sGQlWCDCROZTF%2Fo40tzFI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:kafka.client:Initiating connection to node bootstrap-0 at localhost:9092
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent-received
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name request-latency
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-sent
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.bytes-received
+DEBUG:kafka.metrics.metrics:Added sensor with name node-bootstrap-0.latency
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv6 ('::1', 9092, 0, 0)]>: setting socket option (6, 1, 1)
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: established TCP connection
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+DEBUG:kafka.client:Node bootstrap-0 connected
+DEBUG:kafka.client:Sending metadata request MetadataRequest_v1(topics=NULL) to node bootstrap-0
+DEBUG:kafka.protocol.parser:Sending request MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Request 1: MetadataRequest_v1(topics=NULL)
+DEBUG:kafka.protocol.parser:Received correlation id: 1
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 1 (5.998849868774414 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '100938099730694601631673950980'), ('oauth_timestamp', '1673950980'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=100938099730694601631673950980&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950980&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D100938099730694601631673950980%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950980%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: pMYmTdu9fPjydiDWColt+vtfzYg=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395097152214007; guest_id_ads=v1%3A167395097152214007; guest_id_marketing=v1%3A167395097152214007; personalization_id="v1_UMt1t6HWSVSgHVOR0Mj+dg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="100938099730694601631673950980", oauth_timestamp="1673950980", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="pMYmTdu9fPjydiDWColt%2BvtfzYg%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '74949527577270914511673950990'), ('oauth_timestamp', '1673950990'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=74949527577270914511673950990&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673950990&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D74949527577270914511673950990%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673950990%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: V0/HlOSehqzZyMiRsyPFmHElciI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395097152214007; guest_id_ads=v1%3A167395097152214007; guest_id_marketing=v1%3A167395097152214007; personalization_id="v1_UMt1t6HWSVSgHVOR0Mj+dg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="74949527577270914511673950990", oauth_timestamp="1673950990", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="V0%2FHlOSehqzZyMiRsyPFmHElciI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '11884910278167870121673951010'), ('oauth_timestamp', '1673951010'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=11884910278167870121673951010&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951010&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D11884910278167870121673951010%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951010%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: sdt+QZedCSW648PTZHewo8f8rAo=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395097152214007; guest_id_ads=v1%3A167395097152214007; guest_id_marketing=v1%3A167395097152214007; personalization_id="v1_UMt1t6HWSVSgHVOR0Mj+dg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="11884910278167870121673951010", oauth_timestamp="1673951010", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="sdt%2BQZedCSW648PTZHewo8f8rAo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '174944139770035394641673951042'), ('oauth_timestamp', '1673951042'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:kafka.protocol.parser:Received correlation id: 3
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=174944139770035394641673951042&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951042&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D174944139770035394641673951042%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951042%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 3 (14.995098114013672 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:oauthlib.oauth1.rfc5849:Signature: /uNIaik8JMyQ2FuJGIbwYyXCmbY=
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="174944139770035394641673951042", oauth_timestamp="1673951042", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="%2FuNIaik8JMyQ2FuJGIbwYyXCmbY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '165614806491248276201673951048'), ('oauth_timestamp', '1673951048'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=165614806491248276201673951048&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951048&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D165614806491248276201673951048%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951048%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: McyRvE9kGS7/73j0mKj2KDmL/Go=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395103917305597; guest_id_ads=v1%3A167395103917305597; guest_id_marketing=v1%3A167395103917305597; personalization_id="v1_Gs7mziD0LGtcxdaPkmD2jg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="165614806491248276201673951048", oauth_timestamp="1673951048", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="McyRvE9kGS7%2F73j0mKj2KDmL%2FGo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '17306290769230781211673951058'), ('oauth_timestamp', '1673951058'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=17306290769230781211673951058&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951058&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D17306290769230781211673951058%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951058%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: rhARo+QU3meqsIBu5qDj5II2xz4=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395103917305597; guest_id_ads=v1%3A167395103917305597; guest_id_marketing=v1%3A167395103917305597; personalization_id="v1_Gs7mziD0LGtcxdaPkmD2jg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="17306290769230781211673951058", oauth_timestamp="1673951058", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="rhARo%2BQU3meqsIBu5qDj5II2xz4%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '35252711081661877481673951078'), ('oauth_timestamp', '1673951078'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=35252711081661877481673951078&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951078&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D35252711081661877481673951078%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951078%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: Dx7CrsCpdOd9iWnBqLBczP1RVTU=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395103917305597; guest_id_ads=v1%3A167395103917305597; guest_id_marketing=v1%3A167395103917305597; personalization_id="v1_Gs7mziD0LGtcxdaPkmD2jg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="35252711081661877481673951078", oauth_timestamp="1673951078", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="Dx7CrsCpdOd9iWnBqLBczP1RVTU%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '123676185230253710571673951118'), ('oauth_timestamp', '1673951118'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=123676185230253710571673951118&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951118&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D123676185230253710571673951118%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951118%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: tPjsqekTKGFDwCQxw/8VOUa8nxc=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395103917305597; guest_id_ads=v1%3A167395103917305597; guest_id_marketing=v1%3A167395103917305597; personalization_id="v1_Gs7mziD0LGtcxdaPkmD2jg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="123676185230253710571673951118", oauth_timestamp="1673951118", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="tPjsqekTKGFDwCQxw%2F8VOUa8nxc%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=YOUR KEY HERE, client_secret=****, resource_owner_key=YOUR KEY HERE, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '75174201659938237781673951198'), ('oauth_timestamp', '1673951198'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'YOUR KEY HERE'), ('oauth_token', 'YOUR KEY HERE'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=YOUR%20KEY%20HERE&oauth_nonce=75174201659938237781673951198&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951198&oauth_token=YOUR%20KEY%20HERE&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3DYOUR%2520KEY%2520HERE%26oauth_nonce%3D75174201659938237781673951198%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951198%26oauth_token%3DYOUR%2520KEY%2520HERE%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: OYCQl8o4EjizK7PM7DQv33o3HP0=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395103917305597; guest_id_ads=v1%3A167395103917305597; guest_id_marketing=v1%3A167395103917305597; personalization_id="v1_Gs7mziD0LGtcxdaPkmD2jg=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="75174201659938237781673951198", oauth_timestamp="1673951198", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="YOUR%20KEY%20HERE", oauth_token="YOUR%20KEY%20HERE", oauth_signature="OYCQl8o4EjizK7PM7DQv33o3HP0%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 401 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 401
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '4043482583659674961673951297'), ('oauth_timestamp', '1673951297'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=4043482583659674961673951297&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951297&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D4043482583659674961673951297%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951297%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: OFbj8vhKPNmArSM3p6V9Hjxfpec=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="4043482583659674961673951297", oauth_timestamp="1673951297", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="OFbj8vhKPNmArSM3p6V9Hjxfpec%3D"'}
+DEBUG:kafka.protocol.parser:Received correlation id: 3
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:kafka.protocol.parser:Processing response MetadataResponse_v1
+DEBUG:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]> Response 3 (16.00360870361328 ms): MetadataResponse_v1(brokers=[(node_id=0, host='DESKTOP-7F6JER9', port=9092, rack=None)], controller_id=0, topics=[(error_code=0, topic='test', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TW_ANALYSIS', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='NewTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testing', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='my-topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='TestTopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='topic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])]), (error_code=0, topic='testtopic', is_internal=False, partitions=[(error_code=0, partition=0, leader=0, replicas=[0], isr=[0])])])
+DEBUG:kafka.cluster:Updated cluster metadata to ClusterMetadata(brokers: 1, topics: 8, groups: 0)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): stream.twitter.com:443
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '25231711041707843421673951303'), ('oauth_timestamp', '1673951303'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=25231711041707843421673951303&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951303&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D25231711041707843421673951303%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951303%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: AZa7YSA3osp9ZqacbbUAlSDOEVM=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395129424144446; guest_id_ads=v1%3A167395129424144446; guest_id_marketing=v1%3A167395129424144446; personalization_id="v1_lIR3tsznurmXfRCqF5zIeQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="25231711041707843421673951303", oauth_timestamp="1673951303", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="AZa7YSA3osp9ZqacbbUAlSDOEVM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '85809071445569160071673951313'), ('oauth_timestamp', '1673951313'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=85809071445569160071673951313&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951313&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D85809071445569160071673951313%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951313%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 3yqhDHbrOQxAyweLvII72sd3UFE=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395129424144446; guest_id_ads=v1%3A167395129424144446; guest_id_marketing=v1%3A167395129424144446; personalization_id="v1_lIR3tsznurmXfRCqF5zIeQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="85809071445569160071673951313", oauth_timestamp="1673951313", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="3yqhDHbrOQxAyweLvII72sd3UFE%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '175508825855307803471673951333'), ('oauth_timestamp', '1673951333'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=175508825855307803471673951333&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951333&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D175508825855307803471673951333%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951333%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 0ZUbCyFzc75aMx5bqTV8eyeocNA=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395129424144446; guest_id_ads=v1%3A167395129424144446; guest_id_marketing=v1%3A167395129424144446; personalization_id="v1_lIR3tsznurmXfRCqF5zIeQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="175508825855307803471673951333", oauth_timestamp="1673951333", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="0ZUbCyFzc75aMx5bqTV8eyeocNA%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '21832061393784545741673951373'), ('oauth_timestamp', '1673951373'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=21832061393784545741673951373&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951373&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D21832061393784545741673951373%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951373%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: X5rQUVXNsCi4MiGkkqP+5HOMIJw=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395129424144446; guest_id_ads=v1%3A167395129424144446; guest_id_marketing=v1%3A167395129424144446; personalization_id="v1_lIR3tsznurmXfRCqF5zIeQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="21832061393784545741673951373", oauth_timestamp="1673951373", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="X5rQUVXNsCi4MiGkkqP%2B5HOMIJw%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=cux9gE2ReaD91ZWhJqHNi28X4, client_secret=****, resource_owner_key=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_nonce', '174617474035388271431673951453'), ('oauth_timestamp', '1673951453'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'cux9gE2ReaD91ZWhJqHNi28X4'), ('oauth_token', '3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF'), ('track', 'elon musk'), ('language', 'en')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: language=en&oauth_consumer_key=cux9gE2ReaD91ZWhJqHNi28X4&oauth_nonce=174617474035388271431673951453&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1673951453&oauth_token=3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF&oauth_version=1.0&track=elon%20musk
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: POST&https%3A%2F%2Fstream.twitter.com%2F1.1%2Fstatuses%2Ffilter.json&language%3Den%26oauth_consumer_key%3Dcux9gE2ReaD91ZWhJqHNi28X4%26oauth_nonce%3D174617474035388271431673951453%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1673951453%26oauth_token%3D3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF%26oauth_version%3D1.0%26track%3Delon%2520musk
+DEBUG:oauthlib.oauth1.rfc5849:Signature: YSeMLMo+9qYjYwxzCuor6nUtpYo=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://stream.twitter.com/1.1/statuses/filter.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Python/3.10.9 Requests/2.28.1 Tweepy/4.12.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Content-Type': b'application/x-www-form-urlencoded', b'Cookie': b'guest_id=v1%3A167395129424144446; guest_id_ads=v1%3A167395129424144446; guest_id_marketing=v1%3A167395129424144446; personalization_id="v1_lIR3tsznurmXfRCqF5zIeQ=="', b'Content-Length': b'27', b'Authorization': b'OAuth oauth_nonce="174617474035388271431673951453", oauth_timestamp="1673951453", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="cux9gE2ReaD91ZWhJqHNi28X4", oauth_token="3908641701-ZFljRkNY5ZFcBZdO3Wnbw7drf2MEqnWaFKcn0pF", oauth_signature="YSeMLMo%2B9qYjYwxzCuor6nUtpYo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'track=elon+musk&language=en'
+DEBUG:urllib3.connectionpool:https://stream.twitter.com:443 "POST /1.1/statuses/filter.json HTTP/1.1" 403 None
+ERROR:tweepy.streaming:Stream encountered HTTP error: 403
+ERROR:tweepy.streaming:HTTP error response text: <html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 403 
+Please use V2 filtered and sample volume stream as alternatives
+</title>
+</head>
+<body>
+<h2>HTTP ERROR: 403</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    
+Please use V2 filtered and sample volume stream as alternatives
+</pre>
+</body>
+</html>
+
+INFO:tweepy.streaming:Stream disconnected
+INFO:kafka.producer.kafka:Closing the Kafka producer with 0 secs timeout.
+INFO:kafka.producer.kafka:Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+DEBUG:kafka.producer.sender:Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+DEBUG:kafka.producer.sender:Shutdown of Kafka producer I/O thread has completed.
+DEBUG:kafka.producer.kafka:The Kafka producer has closed.
+INFO:kafka.producer.kafka:Kafka producer closed
